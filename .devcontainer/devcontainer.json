@@ -3,55 +3,22 @@
   "image": "mcr.microsoft.com/devcontainers/universal:2",
   "features": {
     "ghcr.io/devcontainers/features/java:1": {
-      "version": "17" // Java 17 for domain micro-services
+      "version": "17"
     },
     "ghcr.io/devcontainers/features/node:1": {
-      "version": "18" // Node.js 18 for Gateway
+      "version": "18"
     },
     "ghcr.io/devcontainers/features/docker-in-docker:1": {
       "version": "latest",
       "enableNonRoot": "true"
     },
     "ghcr.io/devcontainers/features/aws-cli:1": {
-      "version": "latest" // AWS CLI for CDK
+      "version": "latest"
     },
     "ghcr.io/devcontainers/features/typescript:1": {
-      "version": "latest" // CDK and Gateway TypeScript
+      "version": "latest"
     }
   },
-
-  "customizations": {
-    "vscode": {
-      "extensions": [
-        "vscjava.vscode-java-pack", // Java/Kotlin support
-        "redhat.vscode-xml", // XML support (for Gradle)
-        "ms-azuretools.vscode-docker", // Docker support
-        "dbaeumer.vscode-eslint", // ESLint for Node.js
-        "esbenp.prettier-vscode", // Code formatter
-        "GraphQL.vscode-graphql", // GraphQL syntax highlighting and linting
-        "GraphQL.vscode-graphql-syntax",
-        "mhutchie.git-graph", // Git Graph for visualizing commits
-        "AmazonWebServices.aws-toolkit" // AWS Toolkit for VS Code
-      ],
-      "settings": {
-        "java.import.gradle.java.home": "/usr/lib/jvm/java-17-openjdk-amd64",
-        "java.configuration.runtimes": [
-          {
-            "name": "JavaSE-17",
-            "path": "/usr/lib/jvm/java-17-openjdk-amd64", // Adjust path
-            "default": true
-          }
-        ]
-      }
-    }
-  },
-
-  "postCreateCommand": {
-    "install_kotlin_deps": "cd services/product-service && ./gradlew build --no-daemon", // Pre-build product service
-    "install_node_deps_gateway": "cd gateway && npm install", // Install gateway deps
-    "install_node_deps_cdk": "cd cdk && npm install" // Install CDK deps
-  },
-
   "portsAttributes": {
     "8080": {
       "label": "Product Service",
@@ -63,12 +30,10 @@
     },
     "4000": {
       "label": "GraphQL Gateway",
-      "onAutoForward": "openBrowser" // Automatically open browser to gateway
+      "onAutoForward": "openBrowser"
     }
   },
-
   "forwardPorts": [8080, 8081, 4000],
-
   "remoteUser": "codespace",
   "containerUser": "codespace"
 }
