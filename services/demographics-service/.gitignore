@@ -1,0 +1,30 @@
+# Gradle
+build/
+.gradle/
+*.gradle.kts.bak
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+.DS_Store
+
+# Build artifacts
+*.jar
+*.war
+*.aar
+*.class
+
+# Local env files
+.env
+.env.local
+.env.*.local
+
+# Log files
+*.log
+logs/
+
+# Testing
+test-results/

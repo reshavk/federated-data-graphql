@@ -1,0 +1,15 @@
+type Query {
+  demographics(limit: Int = 50): [Demographics!]!
+  demographicsByCountry(cca2: String!): Demographics
+  searchDemographics(name: String!, limit: Int = 50): [Demographics!]!
+}
+
+type Demographics {
+  cca2: String!
+  countryName: String!
+  population: Int
+  area: Float
+  density: Float
+  capitals: [String!]!
+  timezones: [String!]!
+}
