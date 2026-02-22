@@ -1,0 +1,40 @@
+type Query {
+  countries(region: String, limit: Int = 50): [Country!]!
+  country(cca2: String!): Country
+  searchCountries(name: String!, limit: Int = 50): [Country!]!
+}
+
+type Country {
+    cca2: String!
+    cca3: String!
+    name: String!
+    officialName: String
+    region: String!
+    subregion: String
+    capital: [String!]!
+    languages: [Language!]!
+    currencies: [Currency!]!
+    borders: [Country!]!
+    continents: [String!]!
+    coordinates: Coordinates
+    area: Float
+    population: Int
+    timezones: [String!]!
+    flag: String
+}
+
+type Language {
+    code: String!
+    name: String!
+}
+
+type Currency {
+    code: String!
+    symbol: String
+    name: String!
+}
+
+type Coordinates {
+    latitude: Float!
+    longitude: Float!
+}

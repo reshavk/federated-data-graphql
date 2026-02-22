@@ -1,0 +1,30 @@
+# Gradle and Kotlin
+.gradle
+.kotlin
+build/
+*.jar
+
+# IDE
+.idea/
+.vscode/
+*.iml
+*.iws
+*.ipr
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env
+.env.local
+
+# Logs
+logs/
+*.log
+
+# Docker
+.dockerignore
+
+# Git
+.git/
