@@ -1,10 +1,7 @@
 {
     "name": "GraphQL Countries Service - Kotlin/JVM",
-    "dockerFile": "services/countries-service/Dockerfile",
-    "context": "..",
-    "features": {
-        "ghcr.io/devcontainers/features/git:1": {}
-    },
+    "dockerFile": "Dockerfile",
+    "context": ".",
     "customizations": {
         "vscode": {
             "extensions": [
