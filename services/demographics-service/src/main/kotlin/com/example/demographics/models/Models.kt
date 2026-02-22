@@ -1,5 +1,6 @@
 package com.example.demographics.models
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties
 import com.fasterxml.jackson.annotation.JsonProperty
 
 /**
@@ -30,6 +31,7 @@ data class DemographicsDto(
     val latlng: List<Double>?
 )
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 data class NameDto(
     @JsonProperty("common")
     val common: String,
